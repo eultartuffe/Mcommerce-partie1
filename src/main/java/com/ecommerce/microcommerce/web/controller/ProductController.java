@@ -52,6 +52,13 @@ public class ProductController {
  		}
  		return result;
  	}
+ 	
+ 	// Tri par ordre alphabétique
+ 	@ApiOperation(value = "Trie les produits par ordre alphabétique")
+ 	@GetMapping(value = "/TriProduits")
+ 	public List<Product> trierProduitsParOrdreAlphabetique() {
+		return productDao.findAllByOrderByNomAsc();	
+ 	}
 
     //Récupérer la liste des produits
 
